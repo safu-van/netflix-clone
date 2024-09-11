@@ -1,5 +1,5 @@
 import React from 'react'
-import { ImageUrl } from '../API'
+import { ImageUrl } from '../constants/constants'
 
 function MovieCard({ movie }) {
   return (

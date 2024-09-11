@@ -3,8 +3,8 @@ import NavBar from './Components/NavBar';
 import Banner from './Components/Banner';
 import MovieCard from './Components/MovieCard';
 import axios from 'axios';
-import { ApiKey } from './API';
-import { BaseUrl } from './API';
+import { ApiKey } from './constants/constants';
+import { BaseUrl } from './constants/constants';
 
 function App() {
   const [banner, setBanner] = useState();
