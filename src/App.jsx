@@ -10,7 +10,7 @@ function App() {
   const [banner, setBanner] = useState();
   const [trending, setTrending] = useState([])
   const [action, setAction] = useState([])
-  const [adventure, setAdventure] = useState([])
+  const [horror, setHorror] = useState([])
 
   useEffect(() => {
     const randomNumber = Math.floor(Math.random() * 20);
@@ -32,9 +32,9 @@ function App() {
         console.log(error)
       })
 
-    axios.get(`${BaseUrl}/discover/movie?api_key=${ApiKey}&with_genres=12`)
+    axios.get(`${BaseUrl}/discover/movie?api_key=${ApiKey}&with_genres=27`)
       .then((res) => {
-        setAdventure(res.data.results)
+        setHorror(res.data.results)
       })
       .catch((error) => {
         console.log(error)
@@ -43,25 +43,25 @@ function App() {
   }, []);
 
   return (
-    <div className='bg-black'>
+    <div className='bg-black mb-16'>
       <NavBar />
       <Banner banner={banner} />
       <div className='p-4 px-10'>
         <h3 className='my-3 text-2xl text-white'>Trending</h3>
-        <div className='flex overflow-x-scroll w-full gap-4 '>
+        <div className='flex overflow-x-scroll w-full gap-4 scroll-smooth scrollbar-hide'>
           {trending.map((trending_movie, index) => (<MovieCard movie={trending_movie} key={index} />))}
         </div>
       </div>
       <div className='p-4 px-10'>
         <h3 className='my-3 text-2xl text-white'>Action</h3>
-        <div className='flex overflow-x-scroll w-full gap-4 '>
+        <div className='flex overflow-x-scroll w-full gap-4 scroll-smooth scrollbar-hide'>
           {action.map((action_movie, index) => (<MovieCard movie={action_movie} key={index} />))}
         </div>
       </div>
       <div className='p-4 px-10'>
-        <h3 className='my-3 text-2xl text-white'>Adventure</h3>
-        <div className='flex overflow-x-scroll w-full gap-4 '>
-          {adventure.map((adventure_movie, index) => (<MovieCard movie={adventure_movie} key={index} />))}
+        <h3 className='my-3 text-2xl text-white'>Horror</h3>
+        <div className='flex overflow-x-scroll w-full gap-4 scroll-smooth scrollbar-hide'>
+          {horror.map((horror_movie, index) => (<MovieCard movie={horror_movie} key={index} />))}
         </div>
       </div>
     </div>
