@@ -30,9 +30,9 @@ function MovieCard({ movie }) {
   };
 
   return (
-    <div className='flex-none '>
+    <div className='flex-none'>
       <img
-        className='w-44 cursor-pointer'
+        className='w-44 cursor-pointer transition-transform transform hover:scale-110'
         src={movie && ImageUrl + movie.poster_path}
         alt="Movie name"
         onClick={openModal}
