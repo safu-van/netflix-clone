@@ -12,14 +12,14 @@ function Banner({ banner }) {
 
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-l from-transparent to-black opacity-80"></div>
 
-      <div className="absolute top-1/2 left-[8%] md:left-[10%] lg:left-[12%] transform -translate-y-1/2 text-white px-4">
+      <div className="absolute top-3/4 lg:top-1/2 left-[1%] md:left-[10%] lg:left-[11%] transform -translate-y-1/2 text-white px-4">
         {banner && (
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
+          <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
             {banner.title ? banner.title : banner.name}
           </h2>
         )}
         <p
-          className="w-full sm:w-96 mt-3 text-sm sm:text-base md:text-lg lg:text-xl line-clamp-5"
+          className="w-full text-gray-200 sm:w-96 mt-3 text-sm sm:text-base md:text-md lg:text-md line-clamp-5"
           title={banner?.overview}
         >
           {banner?.overview}
