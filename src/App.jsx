@@ -11,6 +11,7 @@ function App() {
   const [trending, setTrending] = useState([]);
   const [action, setAction] = useState([]);
   const [horror, setHorror] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const randomNumber = Math.floor(Math.random() * 20);
@@ -19,6 +20,7 @@ function App() {
       .get(`${BaseUrl}/trending/all/week?api_key=${ApiKey}&language=en-US`)
       .then((res) => {
         setBanner(res.data.results[randomNumber]);
+        setLoading(false);
         setTrending(res.data.results);
       })
       .catch((error) => {
@@ -47,7 +49,7 @@ function App() {
   return (
     <div className="bg-black mb-16">
       <NavBar />
-      <Banner banner={banner} />
+      <Banner banner={banner} loading={loading} />
       <div className="p-4 px-10">
         <h3 className="my-3 text-2xl text-white">Trending</h3>
         <div className="flex overflow-x-scroll w-full gap-4 scroll-smooth scrollbar-hide">
