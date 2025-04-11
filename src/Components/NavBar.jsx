@@ -8,8 +8,8 @@ function NavBar() {
       <div className="flex justify-between items-center p-2 px-4 md:px-8 lg:px-40">
         <div className="flex items-center">
           <img
-            src="/netflix-logo.svg"
-            alt="Logo"
+            src="/netflix-logo.sv"
+            alt="Netflix"
             className="h-8 sm:h-10 lg:h-12 cursor-pointer"
           />
           <div className="hidden md:flex gap-4 ml-8">
