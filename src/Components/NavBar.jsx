@@ -10,7 +10,7 @@ function NavBar() {
           <img
             src="/netflix-logo.sv"
             alt="Netflix"
-            className="h-8 sm:h-10 lg:h-12 cursor-pointer"
+            className="h-8 sm:h-10 lg:h-12 cursor-pointer text-white"
           />
           <div className="hidden md:flex gap-4 ml-8">
             <span className="text-white text-sm">Home</span>
